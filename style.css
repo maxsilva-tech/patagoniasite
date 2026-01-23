@@ -1,57 +1,95 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4c542;
-  color: #1f1f1f;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #d4a83f; /* mostaza */
+  color: #4a3b2a; /* marrón claro */
+}
+
+/* Fondo con patrón opcional (logo) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("logo.png");
+  background-repeat: repeat;
+  background-size: 220px;
+  opacity: 0.04; /* MUY suave */
+  z-index: -1;
 }
 
 header {
   text-align: center;
-  padding: 20px;
+  padding: 28px 20px;
 }
 
 .logo {
-  max-width: 180px;
+  max-width: 210px;
 }
 
 main {
+  max-width: 900px;
+  margin: auto;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
+  color: #ffffff;
+  margin-bottom: 40px;
+  font-size: 2.2em;
 }
 
-section {
-  margin-bottom: 30px;
+h2 {
+  color: #ffffff;
+  background-color: #1f5b3b;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-top: 45px;
+  margin-bottom: 20px;
 }
 
+/* TARJETAS DE PRODUCTO */
 .item {
-  background: white;
-  padding: 12px;
-  margin-bottom: 10px;
-  border-radius: 8px;
+  background-color: #2f7a55; /* verde Patagonia */
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
 }
 
-.item span {
-  font-weight: bold;
-  display: block;
+/* LÍNEA SUPERIOR: nombre + precio */
+.item > span {
+  font-weight: 700;
+  font-size: 1.15em; /* nombre más grande */
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.item small {
-  display: block;
-  font-size: 0.9em;
-  margin-top: 4px;
+/* PRECIO */
+.item > span::after {
+  content: "";
 }
 
+/* Precio */
 .item strong {
-  float: right;
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #f4e9d8; /* blanco cálido */
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
+/* DESCRIPCIÓN */
+.item small {
+  margin-top: 6px;
   font-size: 0.9em;
+  color: #f1e6d2; /* marrón claro */
 }
+
+/* Quitar fondo blanco de textos sueltos */
+section p {
+  background-color: #2f7a55;
+  co
 
 
