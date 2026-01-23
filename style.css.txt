@@ -7,25 +7,29 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: var(--fundo);
+  background-color: var(--fundo);
   color: var(--verde);
 }
 
 header {
   text-align: center;
   padding: 20px;
+  background-color: white;
 }
 
 .logo {
   max-width: 160px;
+  margin-bottom: 10px;
 }
 
 .lang button {
-  margin: 5px;
-  padding: 6px 10px;
+  margin: 4px;
+  padding: 6px 12px;
   border: none;
-  background: var(--amarelo);
+  background-color: var(--amarelo);
+  color: #000;
   font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -33,12 +37,16 @@ main {
   padding: 20px;
 }
 
+section {
+  margin-bottom: 30px;
+}
+
 .item {
   background: white;
   padding: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,.08);
 }
 
 .item span {
@@ -49,4 +57,9 @@ main {
 .item small {
   display: block;
   margin: 4px 0;
+  color: #555;
+}
+
+.item strong {
+  float: right;
 }
