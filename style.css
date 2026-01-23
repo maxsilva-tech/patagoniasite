@@ -114,6 +114,33 @@ section p {
   color: #1e4f3a; /* verde escuro */
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 16px 20px;
+  border-radius: 14px; /* quadrado suave */
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1em;
+  min-width: 160px;
+}
+
+/* WhatsApp */
+.whatsapp {
+  background-color: #eaf7ef; /* verde claro */
+  color: #1e7d45;
+  border: 2px solid #1e7d45;
+}
+
+/* Instagram */
+.instagram {
+  background-color: #f7e9f1; /* rosa claro */
+  color: #8a2d6c;
+  border: 2px solid #8a2d6c;
+}
+
 
 
 
