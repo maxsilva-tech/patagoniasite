@@ -100,6 +100,20 @@ section p {
   opacity: 0.9;
 }
 
+.horario {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background-color: #f3e6b5; /* mostaza claro */
+  border-radius: 14px;
+  display: inline-block;
+}
+
+.horario p {
+  margin: 4px 0;
+  font-size: 0.95em;
+  color: #1e4f3a; /* verde escuro */
+}
+
 
 
 
