@@ -19,11 +19,12 @@ body::before {
 
 header {
   text-align: center;
-  padding: 40px 20px 30px;
+  padding: 60px 20px 50px; /* más aire arriba y abajo */
 }
 
 .logo {
-  max-width: 210px;
+  max-width: 380px; /* LOGO PRINCIPAL */
+  width: 90%;
 }
 
 main {
@@ -91,6 +92,7 @@ h2 {
 section p {
   background-color: #2f7a55;
   co
+
 
 
 
