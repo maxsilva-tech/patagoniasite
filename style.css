@@ -13,7 +13,7 @@ body::before {
   background-image: url("logo.png");
   background-repeat: repeat;
   background-size: 220px;
-  opacity: 0.04; /* MUY suave */
+  opacity: 0; /* MUY suave */
   z-index: -1;
 }
 
@@ -91,5 +91,6 @@ h2 {
 section p {
   background-color: #2f7a55;
   co
+
 
 
