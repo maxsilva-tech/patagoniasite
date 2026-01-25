@@ -85,3 +85,23 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') prevBtn.click();
   if (e.key === 'ArrowRight') nextBtn.click();
 });
+// =======================
+// CONTADOR DE VISITAS
+// =======================
+(function () {
+  let visits = localStorage.getItem("patagonia_visits");
+
+  if (!visits) {
+    visits = 1;
+  } else {
+    visits = parseInt(visits, 10) + 1;
+  }
+
+  localStorage.setItem("patagonia_visits", visits);
+
+  const counter = document.getElementById("visit-count");
+  if (counter) {
+    counter.textContent = visits;
+  }
+})();
+
