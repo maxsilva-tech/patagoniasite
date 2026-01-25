@@ -29,6 +29,17 @@ header {
   text-align: center;
   padding: 60px 20px 50px;
 }
+/* ===== CENTRAR LOGO Y HORARIO EN PC ===== */
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* 🔥 esto centra TODO */
+}
+
+.horario {
+  text-align: center;
+}
 
 .logo {
   max-width: 420px;
@@ -344,6 +355,7 @@ header .horario {
   display: block;
   margin: 20px auto 0;
 }
+
 
 
 
