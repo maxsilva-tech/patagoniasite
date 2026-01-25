@@ -62,11 +62,12 @@ h2 {
 .item {
   background: #2f7a55;
   color: white;
-  padding: 12px;
+  padding: 16px;
   border-radius: 12px;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-direction: column;   /* orden vertical */
+  gap: 6px;                 /* aire entre líneas */
+  margin-bottom: 12px;
 }
 
 .gallery {
@@ -321,21 +322,26 @@ footer.social .btn.google:hover {
 
 @media (max-width: 600px) {
 
-  .item > span {
-    flex-direction: column;     /* nombre y precio en columna */
-    align-items: flex-start;
-    gap: 4px;
-  }
+  /* =======================
+   ITEMS – ORDEN FINAL
+======================= */
 
-  .item strong {
-    align-self: flex-end;       /* precio a la derecha */
-    font-size: 1em;
-  }
+.item span {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #ffffff;
+}
 
-  .item small {
-    margin-top: 10px;           /* aire entre nombre y descripción */
-    line-height: 1.45;
-  }
+.item small {
+  font-size: 0.9em;
+  color: #f1e6d2;
+  line-height: 1.45;
+}
+
+.item strong {
+  font-size: 1.05em;
+  color: #f4e9d8;
+}
 
   .item {
     padding: 16px 18px;         /* más aire general */
@@ -418,6 +424,7 @@ footer.social .btn.google:hover {
     margin-top: 2px;
   }
 }
+
 
 
 
