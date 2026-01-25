@@ -194,10 +194,11 @@ h2 {
 }
 
 .lightbox-img {
-  max-width: 100%;
-  max-height: 80vh;   /* 🔥 CLAVE PARA CELULAR */
+  max-width: 85vw;     /* 🔥 limita el ancho en PC */
+  max-height: 75vh;    /* 🔥 limita la altura */
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 /* Cerrar */
@@ -235,8 +236,16 @@ h2 {
 /* 📱 Ajuste específico mobile */
 @media (max-width: 600px) {
   .lightbox-img {
-    max-height: 70vh;  /* 🔥 evita imagen gigante */
+    max-width: 95vw;
+    max-height: 65vh;   /* 🔥 evita imagen gigante en vertical */
   }
+
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 34px;
+  }
+}
+
 
   .lightbox .prev,
   .lightbox .next {
@@ -401,6 +410,7 @@ h2 {
     max-width: 100px;
   }
 }
+
 
 
 
