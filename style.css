@@ -451,6 +451,25 @@ footer.social .btn.google:hover {
   }
 
 }
+/* =======================
+   FIX HORARIO MOBILE
+======================= */
+@media (max-width: 600px) {
+
+  header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .horario {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 360px;   /* 🔥 clave: evita que se desplace */
+  }
+
+}
+
 
 
 
