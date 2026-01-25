@@ -376,7 +376,49 @@ footer.social .btn.google:hover {
   }
 }
 
+/* =======================
+   ITEMS – ORDEN VERTICAL
+======================= */
+
+.item span {
+  font-weight: 700;
+  font-size: 1.1em;
+  color: #ffffff;
+  margin-bottom: 4px;
 }
+
+.item small {
+  font-size: 0.9em;
+  color: #f1e6d2;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.item strong {
+  font-size: 1.05em;
+  color: #f4e9d8;
+  align-self: flex-start;
+}
+
+/* 📱 Mobile – más aire */
+@media (max-width: 600px) {
+  .item {
+    padding: 16px 16px;
+  }
+
+  .item span {
+    font-size: 1.05em;
+  }
+
+  .item small {
+    font-size: 0.88em;
+  }
+
+  .item strong {
+    margin-top: 2px;
+  }
+}
+
 
 
 
