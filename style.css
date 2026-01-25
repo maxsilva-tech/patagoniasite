@@ -343,16 +343,41 @@ footer.social .btn.google:hover {
 }
 
 .team {
-  margin: 40px auto 10px;
+  margin: 35px auto 15px;
   text-align: center;
 }
 
 .team img {
-  max-width: 900px;
+  max-width: 620px;     /* 🔥 tamaño controlado en PC */
   width: 100%;
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
 }
+
+.team-text {
+  margin-top: 14px;
+  font-size: 1em;
+  color: #ffffff;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .team img {
+    max-width: 90%;
+  }
+
+  .team-text {
+    font-size: 0.95em;
+    padding: 0 10px;
+  }
+}
+
+}
+
 
 
 
