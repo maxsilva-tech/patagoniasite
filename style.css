@@ -297,6 +297,50 @@ h2 {
     font-size: 36px;
   }
 }
+/* =======================
+   BOTONES DE IDIOMA
+======================= */
+
+.lang {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0 30px;
+}
+
+.lang button {
+  background-color: #f3e6b5; /* mostaza claro */
+  color: #1e4f3a;            /* verde Patagonia */
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.95em;
+  font-weight: 700;
+  border-radius: 999px;      /* 🔥 redondos */
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+  transition: all 0.25s ease;
+}
+
+/* Hover (solo PC) */
+.lang button:hover {
+  background-color: #1f5b3b;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Click */
+.lang button:active {
+  transform: scale(0.95);
+}
+
+/* 📱 Mobile (mismo estilo, un poco más chico) */
+@media (max-width: 600px) {
+  .lang button {
+    padding: 8px 14px;
+    font-size: 0.9em;
+  }
+}
+
 
 
 
