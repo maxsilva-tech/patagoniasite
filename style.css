@@ -199,4 +199,51 @@ h2 {
   }
 }
 
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.lightbox .nav {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: #fff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox .prev {
+  left: 30px;
+}
+
+.lightbox .next {
+  right: 30px;
+}
+
 
