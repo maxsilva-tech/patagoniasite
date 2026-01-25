@@ -1,11 +1,15 @@
+/* =======================
+   ESTILO GENERAL
+======================= */
+
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #d4a83f; /* mostaza */
-  color: #4a3b2a; /* marrón claro */
+  color: #4a3b2a; /* marrón */
 }
 
-/* Fondo con patrón opcional (logo) */
+/* Fondo opcional con logo (apagado) */
 body::before {
   content: "";
   position: fixed;
@@ -13,19 +17,27 @@ body::before {
   background-image: url("logo.png");
   background-repeat: repeat;
   background-size: 220px;
-  opacity: 0; /* MUY suave */
+  opacity: 0;
   z-index: -1;
 }
 
+/* =======================
+   HEADER / LOGO
+======================= */
+
 header {
   text-align: center;
-  padding: 60px 20px 50px; /* más aire arriba y abajo */
+  padding: 60px 20px 50px;
 }
 
 .logo {
-  max-width: 420px; /* LOGO PRINCIPAL */
+  max-width: 420px;
   width: 90%;
 }
+
+/* =======================
+   CONTENIDO
+======================= */
 
 main {
   max-width: 900px;
@@ -49,9 +61,12 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* TARJETAS DE PRODUCTO */
+/* =======================
+   TARJETAS DE PRODUCTO
+======================= */
+
 .item {
-  background-color: #2f7a55; /* verde Patagonia */
+  background-color: #2f7a55;
   padding: 14px 16px;
   margin-bottom: 12px;
   border-radius: 12px;
@@ -59,39 +74,45 @@ h2 {
   flex-direction: column;
 }
 
-/* LÍNEA SUPERIOR: nombre + precio */
+/* Nombre + precio */
 .item > span {
   font-weight: 700;
-  font-size: 1.15em; /* nombre más grande */
+  font-size: 1.15em;
   color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-/* PRECIO */
-.item > span::after {
-  content: "";
-}
-
-/* Precio */
 .item strong {
-  font-weight: 700;
   font-size: 1.1em;
-  color: #f4e9d8; /* blanco cálido */
+  color: #f4e9d8;
 }
 
-/* DESCRIPCIÓN */
+/* Descripción */
 .item small {
   margin-top: 6px;
   font-size: 0.9em;
-  color: #f1e6d2; /* marrón claro */
+  color: #f1e6d2;
 }
 
-/* Quitar fondo blanco de textos sueltos */
-section p {
-  background-color: #2f7a55;
-  co
+/* =======================
+   HORARIOS / DIRECCIÓN
+======================= */
+
+.horario {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background-color: #f3e6b5;
+  border-radius: 14px;
+  display: inline-block;
+}
+
+.horario p {
+  margin: 4px 0;
+  font-size: 0.95em;
+  color: #1e4f3a;
+}
 
 .address {
   margin-top: 20px;
@@ -100,19 +121,9 @@ section p {
   opacity: 0.9;
 }
 
-.horario {
-  margin-top: 20px;
-  padding: 16px 20px;
-  background-color: #f3e6b5; /* mostaza claro */
-  border-radius: 14px;
-  display: inline-block;
-}
-
-.horario p {
-  margin: 4px 0;
-  font-size: 0.95em;
-  color: #1e4f3a; /* verde escuro */
-}
+/* =======================
+   BOTONES
+======================= */
 
 .btn {
   display: inline-flex;
@@ -120,31 +131,29 @@ section p {
   justify-content: center;
   margin: 10px;
   padding: 16px 20px;
-  border-radius: 14px; /* quadrado suave */
+  border-radius: 14px;
   font-weight: 700;
   text-decoration: none;
   font-size: 1em;
   min-width: 160px;
 }
 
-
-/* WhatsApp */
 .whatsapp {
-  background-color: #eaf7ef; /* verde claro */
+  background-color: #eaf7ef;
   color: #1e7d45;
   border: 2px solid #1e7d45;
 }
 
-/* Instagram */
 .instagram {
-  background-color: #f7e9f1; /* rosa claro */
+  background-color: #f7e9f1;
   color: #8a2d6c;
   border: 2px solid #8a2d6c;
 }
 
+/* =======================
+   GALERÍA DE IMÁGENES
+======================= */
 
-/* ===== GALERIA DE IMAGENES ===== */
-/* Galería de imágenes */
 .gallery {
   display: flex;
   gap: 10px;
@@ -153,67 +162,33 @@ section p {
 
 .gallery img {
   width: 33.33%;
-  height: 90px;        /* MÁS CHICAS */
+  height: 100px;
+  max-height: 100px;
   object-fit: cover;
   border-radius: 12px;
+  display: block;
 }
 
-/* 📱 Celular */
-@media (max-width: 600px) {
+/* =======================
+   MOBILE
+======================= */
+
+@media (max-width: 768px) {
+  header {
+    padding: 40px 15px;
+  }
+
+  h1 {
+    font-size: 1.9em;
+  }
+
   .gallery {
     gap: 8px;
   }
 
   .gallery img {
-    width: 33.33%;     /* SIGUEN UNA AL LADO DE LA OTRA */
-    height: 70px;      /* MÁS BAJITAS EN MOBILE */
+    width: 33.33%;
+    height: 80px;
+    max-height: 80px;
   }
 }
-
-
-/* ===== MOBILE ===== */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery img {
-    height: 140px;
-  }
-}
-/* ===== GALERÍA DE IMÁGENES ===== */
-.gallery {
-  display: flex;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-.gallery img {
-  width: 33.33%;
-  max-height: 120px;      /* TAMAÑO CONTROLADO */
-  object-fit: cover;      /* recorta sin deformar */
-  border-radius: 12px;
-}
-
-/* ===== AJUSTE ESPECÍFICO PARA CELULAR ===== */
-@media (max-width: 768px) {
-  .gallery {
-    gap: 8px;
-  }
-
-  .gallery img {
-    width: 33.33%;        /* siguen una al lado de la otra */
-    max-height: 90px;     /* MÁS CHICAS EN MÓVIL */
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
