@@ -175,17 +175,18 @@ h2 {
 }
 
 /* =======================
-   LIGHTBOX
+   LIGHTBOX (IMÁGENES GRANDES)
 ======================= */
 
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.92);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  padding: 20px;
 }
 
 .lightbox.active {
@@ -193,36 +194,56 @@ h2 {
 }
 
 .lightbox-img {
-  max-width: 90%;
-  max-height: 85%;
+  max-width: 100%;
+  max-height: 80vh;   /* 🔥 CLAVE PARA CELULAR */
+  object-fit: contain;
   border-radius: 12px;
 }
 
+/* Cerrar */
 .lightbox .close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
+  top: 15px;
+  right: 20px;
+  font-size: 36px;
   color: #ffffff;
   cursor: pointer;
+  z-index: 10000;
 }
 
-.lightbox .nav {
+/* Flechas */
+.lightbox .prev,
+.lightbox .next {
   position: absolute;
   top: 50%;
-  font-size: 60px;
+  transform: translateY(-50%);
+  font-size: 48px;
   color: #ffffff;
   cursor: pointer;
   user-select: none;
+  padding: 10px;
 }
 
 .lightbox .prev {
-  left: 30px;
+  left: 15px;
 }
 
 .lightbox .next {
-  right: 30px;
+  right: 15px;
 }
+
+/* 📱 Ajuste específico mobile */
+@media (max-width: 600px) {
+  .lightbox-img {
+    max-height: 70vh;  /* 🔥 evita imagen gigante */
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 36px;
+  }
+}
+
 
 /* =======================
    FOOTER
@@ -341,6 +362,7 @@ h2 {
     max-height: 50px;
   }
 }
+
 
 
 
