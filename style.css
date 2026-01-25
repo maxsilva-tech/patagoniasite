@@ -424,6 +424,34 @@ footer.social .btn.google:hover {
     margin-top: 2px;
   }
 }
+/* =======================
+   MOBILE – ORDEN DEL ITEM
+======================= */
+@media (max-width: 600px) {
+
+  .item {
+    padding: 16px 18px;
+  }
+
+  .item span {
+    display: block;
+    font-size: 1.05em;
+    margin-bottom: 6px;
+  }
+
+  .item small {
+    display: block;
+    margin-bottom: 8px;
+    line-height: 1.45;
+  }
+
+  .item strong {
+    display: block;
+    font-size: 1em;
+  }
+
+}
+
 
 
 
