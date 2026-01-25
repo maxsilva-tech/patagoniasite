@@ -251,6 +251,70 @@ footer .delivery-links img {
   }
 }
 
+/* =======================
+   BOTONES SOCIALES – ESTILO FOFO
+======================= */
+
+footer.social .btn {
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-size: 1em;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* WhatsApp */
+footer.social .btn.whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+  border: none;
+}
+
+footer.social .btn.whatsapp:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(37,211,102,0.45);
+}
+
+/* Instagram */
+footer.social .btn.instagram {
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  color: #ffffff;
+  border: none;
+}
+
+footer.social .btn.instagram:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(214,41,118,0.45);
+}
+
+/* Google */
+footer.social .btn.google {
+  background-color: #ffffff;
+  color: #1e4f3a;
+  border: 2px solid #fbbc04;
+}
+
+footer.social .btn.google:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(251,188,4,0.45);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  footer.social .btn {
+    padding: 12px 20px;
+    font-size: 0.95em;
+  }
+}
+
 
 
 
