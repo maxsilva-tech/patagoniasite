@@ -282,32 +282,44 @@ h2 {
   cursor: pointer;
 }
 
-.lightbox button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
+/* =======================
+   BOTONES DE IDIOMA
+======================= */
+
+.lang {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto 10px;
+}
+
+.lang button {
+  background-color: #1f5b3b;
+  color: #ffffff;
   border: none;
-  color: #fff;
-  font-size: 48px;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.85em;
+  font-weight: 700;
   cursor: pointer;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;              /* 🔥 espacio bandera / texto */
+  transition: all 0.2s ease;
 }
 
-.lightbox .prev {
-  left: 20px;
-}
-
-.lightbox .next {
-  right: 20px;
+.lang button:hover {
+  background-color: #2f7a55;
+  transform: translateY(-1px);
 }
 
 /* 📱 Mobile */
 @media (max-width: 768px) {
-  .lightbox button {
-    font-size: 36px;
-  }
+  .lang button {
+    font-size: 0.8em;
+    padding: 6px 12px;
 }
+   
 /* =======================
    BOTONES DE IDIOMA
 ======================= */
@@ -355,6 +367,7 @@ header .horario {
   display: block;
   margin: 20px auto 0;
 }
+
 
 
 
