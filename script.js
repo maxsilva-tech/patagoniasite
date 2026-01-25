@@ -1,20 +1,24 @@
 /* =========================
-   CAMBIO DE IDIOMA
+   CAMBIO DE IDIOMA (SEGURO)
 ========================= */
 
 function setLang(lang) {
   const elements = document.querySelectorAll("[data-pt]");
 
   elements.forEach(el => {
+    // ⚠️ NO tocar elementos complejos
+    if (
+      el.tagName === "SMALL" ||
+      el.closest(".item") && el.querySelector("small")
+    ) return;
+
     const text = el.getAttribute(`data-${lang}`);
     if (text) el.textContent = text;
   });
 
-  // Guardar idioma
   localStorage.setItem("lang", lang);
 }
 
-// Cargar idioma guardado
 document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("lang") || "pt";
   setLang(savedLang);
@@ -34,8 +38,7 @@ const nextBtn = lightbox.querySelector(".next");
 let currentGallery = [];
 let currentIndex = 0;
 
-// Abrir imagen
-document.querySelectorAll(".gallery img").forEach((img, index) => {
+document.querySelectorAll(".gallery img").forEach(img => {
   img.addEventListener("click", () => {
     currentGallery = Array.from(img.closest(".gallery").querySelectorAll("img"));
     currentIndex = currentGallery.indexOf(img);
@@ -59,7 +62,6 @@ function updateImage() {
   lightboxImg.alt = currentGallery[currentIndex].alt || "Imagem ampliada";
 }
 
-// Navegação
 prevBtn.addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
   updateImage();
@@ -70,16 +72,13 @@ nextBtn.addEventListener("click", () => {
   updateImage();
 });
 
-// Fechar
 closeBtn.addEventListener("click", closeLightbox);
 
-// Fechar clicando fora da imagem
-lightbox.addEventListener("click", (e) => {
+lightbox.addEventListener("click", e => {
   if (e.target === lightbox) closeLightbox();
 });
 
-// Teclado
-document.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", e => {
   if (!lightbox.classList.contains("active")) return;
 
   if (e.key === "Escape") closeLightbox();
