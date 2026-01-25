@@ -29,6 +29,16 @@ header {
   max-width: 420px;      /* 🔥 evita que se estire en PC */
   width: 100%;
 }
+/* =======================
+   FIX HORARIO EN MOBILE
+======================= */
+@media (max-width: 600px) {
+  .horario {
+    width: calc(100% - 40px); /* 🔥 evita corrimiento */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 
 .lang {
@@ -480,6 +490,7 @@ footer.social .btn.google:hover {
   color: #ffffff;
   opacity: 0.85;
 }
+
 
 
 
