@@ -175,7 +175,7 @@ h2 {
 }
 
 /* =======================
-   LIGHTBOX (IMÁGENES GRANDES)
+   LIGHTBOX – AJUSTE FINAL
 ======================= */
 
 .lightbox {
@@ -186,7 +186,7 @@ h2 {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  padding: 20px;
+  padding: 24px;
 }
 
 .lightbox.active {
@@ -194,12 +194,65 @@ h2 {
 }
 
 .lightbox-img {
-  max-width: 85vw;     /* 🔥 limita el ancho en PC */
-  max-height: 75vh;    /* 🔥 limita la altura */
+  max-width: 85vw;     /* 🔥 controla ancho en PC */
+  max-height: 75vh;    /* 🔥 controla alto en PC */
   object-fit: contain;
   border-radius: 14px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
 }
+
+/* Botón cerrar */
+.lightbox .close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 34px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* Flechas */
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 44px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 12px;
+}
+
+.lightbox .prev {
+  left: 18px;
+}
+
+.lightbox .next {
+  right: 18px;
+}
+
+/* 📱 Mobile – AJUSTE FINO */
+@media (max-width: 600px) {
+  .lightbox {
+    padding: 16px;
+  }
+
+  .lightbox-img {
+    max-width: 92vw;   /* casi ancho completo */
+    max-height: 65vh;  /* 🔥 evita imagen gigante */
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 34px;
+    padding: 8px 10px;
+  }
+}
+
 
 /* Cerrar */
 .lightbox .close {
@@ -410,6 +463,7 @@ h2 {
     max-width: 100px;
   }
 }
+
 
 
 
