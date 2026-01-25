@@ -144,19 +144,32 @@ section p {
 
 
 /* ===== GALERIA DE IMAGENES ===== */
+/* Galería de imágenes */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin: 20px 0 40px 0;
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .gallery img {
-  width: 100%;
-  height: 160px;
+  width: 33.33%;
+  height: 90px;        /* MÁS CHICAS */
   object-fit: cover;
   border-radius: 12px;
 }
+
+/* 📱 Celular */
+@media (max-width: 600px) {
+  .gallery {
+    gap: 8px;
+  }
+
+  .gallery img {
+    width: 33.33%;     /* SIGUEN UNA AL LADO DE LA OTRA */
+    height: 70px;      /* MÁS BAJITAS EN MOBILE */
+  }
+}
+
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
@@ -168,6 +181,7 @@ section p {
     height: 140px;
   }
 }
+
 
 
 
