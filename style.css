@@ -127,3 +127,31 @@ h2 {
   height: 48px;
 }
 
+/* =======================
+   LIGHTBOX – AJUSTE MOBILE FINAL
+======================= */
+@media (max-width: 600px) {
+
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 26px;          /* 🔥 más chicas */
+    padding: 6px 8px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+  }
+
+  .lightbox .prev {
+    left: 8px;                /* 🔥 bien pegada al borde */
+  }
+
+  .lightbox .next {
+    right: 8px;               /* 🔥 bien pegada al borde */
+  }
+
+  .lightbox-img {
+    max-width: 94vw;          /* 🔥 deja aire a los costados */
+    max-height: 65vh;
+  }
+}
+
+
