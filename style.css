@@ -315,6 +315,33 @@ footer.social .btn.google:hover {
   }
 }
 
+/* =======================
+   MEJOR LECTURA EN MOBILE
+======================= */
+
+@media (max-width: 600px) {
+
+  .item > span {
+    flex-direction: column;     /* nombre y precio en columna */
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .item strong {
+    align-self: flex-end;       /* precio a la derecha */
+    font-size: 1em;
+  }
+
+  .item small {
+    margin-top: 10px;           /* aire entre nombre y descripción */
+    line-height: 1.45;
+  }
+
+  .item {
+    padding: 16px 18px;         /* más aire general */
+  }
+}
+
 
 
 
