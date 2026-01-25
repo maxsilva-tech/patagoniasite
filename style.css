@@ -293,44 +293,54 @@ h2 {
 }
 
 /* =======================
-   DELIVERY CON LOGOS
+   DELIVERY APPS (SOLO LOGOS)
 ======================= */
 
-.btn {
-  gap: 10px;                 /* espacio entre logo y texto */
+.delivery {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
 }
 
-.btn img {
-  height: 22px;              /* tamaño del logo */
-  width: auto;
-  display: block;
+.delivery-links {
+  display: flex;
+  gap: 18px;
 }
 
-/* Uber Eats */
-.uber {
-  background-color: #000000;
-  color: #ffffff;
-  border: 2px solid #000000;
+.delivery-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease;
 }
 
-/* Glovo */
-.glovo {
-  background-color: #f2f20f;
-  color: #000000;
-  border: 2px solid #f2f20f;
+.delivery-links a:hover {
+  transform: translateY(-4px) scale(1.05);
 }
 
-/* Bolt Food */
-.bolt {
-  background-color: #32d74b;
-  color: #000000;
-  border: 2px solid #32d74b;
+.delivery-links img {
+  max-width: 60px;
+  max-height: 60px;
+  object-fit: contain;
 }
 
 /* 📱 Mobile */
 @media (max-width: 600px) {
-  .btn img {
-    height: 20px;
+  .delivery-links a {
+    width: 68px;
+    height: 68px;
+  }
+
+  .delivery-links img {
+    max-width: 50px;
+    max-height: 50px;
   }
 }
+
+
 
