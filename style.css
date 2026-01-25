@@ -286,3 +286,9 @@ h2 {
     font-size: 40px;
   }
 }
+.google {
+  background-color: #ffffff;
+  color: #1e4f3a;
+  border: 2px solid #fbbc04; /* amarillo Google */
+}
+
