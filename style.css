@@ -156,18 +156,23 @@ h2 {
 
 .gallery {
   display: flex;
-  gap: 10px;
-  margin: 16px auto 0;   /* centra la galería */
-  max-width: 520px;      /* CLAVE: limita tamaño en desktop */
+  gap: 12px;
+  margin: 16px auto 0;
+  max-width: 560px;
 }
 
 .gallery img {
   width: 33.33%;
-  height: 100px;
-  max-height: 100px;
+  height: 140px;              /* MÁS ALTAS */
   object-fit: cover;
+  object-position: center;    /* foco al centro */
   border-radius: 12px;
-  display: block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
 }
 
 /* =======================
@@ -193,4 +198,5 @@ h2 {
     max-height: 80px;
   }
 }
+
 
