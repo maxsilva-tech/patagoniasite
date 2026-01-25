@@ -292,3 +292,45 @@ h2 {
   border: 2px solid #fbbc04; /* amarillo Google */
 }
 
+/* =======================
+   DELIVERY CON LOGOS
+======================= */
+
+.btn {
+  gap: 10px;                 /* espacio entre logo y texto */
+}
+
+.btn img {
+  height: 22px;              /* tamaño del logo */
+  width: auto;
+  display: block;
+}
+
+/* Uber Eats */
+.uber {
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+}
+
+/* Glovo */
+.glovo {
+  background-color: #f2f20f;
+  color: #000000;
+  border: 2px solid #f2f20f;
+}
+
+/* Bolt Food */
+.bolt {
+  background-color: #32d74b;
+  color: #000000;
+  border: 2px solid #32d74b;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .btn img {
+    height: 20px;
+  }
+}
+
