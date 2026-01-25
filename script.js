@@ -1,79 +1,88 @@
-/* ===============================
+/* =========================
    CAMBIO DE IDIOMA
-================================ */
+========================= */
+
 function setLang(lang) {
-  document.querySelectorAll("[data-" + lang + "]").forEach(el => {
-    el.textContent = el.getAttribute("data-" + lang);
+  const elements = document.querySelectorAll("[data-pt]");
+
+  elements.forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.textContent = text;
   });
+
+  // Guardar idioma
+  localStorage.setItem("lang", lang);
 }
 
+// Cargar idioma guardado
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "pt";
+  setLang(savedLang);
+});
 
-/* ===============================
-   LIGHTBOX + SLIDER
-================================ */
-const images = document.querySelectorAll(".gallery img");
+
+/* =========================
+   LIGHTBOX GALERÍA
+========================= */
+
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".lightbox .close");
-const prevBtn = document.querySelector(".lightbox .prev");
-const nextBtn = document.querySelector(".lightbox .next");
+const closeBtn = lightbox.querySelector(".close");
+const prevBtn = lightbox.querySelector(".prev");
+const nextBtn = lightbox.querySelector(".next");
 
+let currentGallery = [];
 let currentIndex = 0;
 
-/* Abrir lightbox */
-images.forEach((img, index) => {
+// Abrir imagen
+document.querySelectorAll(".gallery img").forEach((img, index) => {
   img.addEventListener("click", () => {
-    currentIndex = index;
-    showImage();
-    lightbox.style.display = "flex";
+    currentGallery = Array.from(img.closest(".gallery").querySelectorAll("img"));
+    currentIndex = currentGallery.indexOf(img);
+    openLightbox();
   });
 });
 
-/* Mostrar imagen actual */
-function showImage() {
-  lightboxImg.src = images[currentIndex].src;
+function openLightbox() {
+  lightbox.classList.add("active");
+  updateImage();
+  document.body.style.overflow = "hidden";
 }
 
-/* Cerrar */
-closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
+function closeLightbox() {
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "";
+}
 
-/* Navegación */
-nextBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage();
-});
+function updateImage() {
+  lightboxImg.src = currentGallery[currentIndex].src;
+  lightboxImg.alt = currentGallery[currentIndex].alt || "Imagem ampliada";
+}
 
+// Navegação
 prevBtn.addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage();
+  currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+  updateImage();
 });
 
-/* Cerrar tocando fondo */
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % currentGallery.length;
+  updateImage();
+});
+
+// Fechar
+closeBtn.addEventListener("click", closeLightbox);
+
+// Fechar clicando fora da imagem
 lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
-  }
+  if (e.target === lightbox) closeLightbox();
 });
 
-/* ===============================
-   SWIPE EN CELULAR
-================================ */
-let startX = 0;
+// Teclado
+document.addEventListener("keydown", (e) => {
+  if (!lightbox.classList.contains("active")) return;
 
-lightboxImg.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowLeft") prevBtn.click();
+  if (e.key === "ArrowRight") nextBtn.click();
 });
-
-lightboxImg.addEventListener("touchend", e => {
-  const endX = e.changedTouches[0].clientX;
-
-  if (startX - endX > 50) {
-    nextBtn.click();
-  } else if (endX - startX > 50) {
-    prevBtn.click();
-  }
-});
-
-
