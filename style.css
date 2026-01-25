@@ -5,8 +5,8 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #d4a83f; /* mostaza */
-  color: #4a3b2a; /* marrón */
+  background-color: #d4a83f;
+  color: #4a3b2a;
 }
 
 /* Fondo opcional con logo (apagado) */
@@ -22,28 +22,72 @@ body::before {
 }
 
 /* =======================
-   HEADER / LOGO
+   HEADER / LOGO / HORARIO
 ======================= */
-
-header {
-  text-align: center;
-  padding: 60px 20px 50px;
-}
-/* ===== CENTRAR LOGO Y HORARIO EN PC ===== */
 
 header {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* 🔥 esto centra TODO */
-}
-
-.horario {
+  align-items: center;
   text-align: center;
+  padding: 60px 20px 50px;
 }
 
 .logo {
   max-width: 420px;
   width: 90%;
+}
+
+.horario {
+  margin: 20px auto 0;
+  padding: 16px 20px;
+  background-color: #f3e6b5;
+  border-radius: 14px;
+  text-align: center;
+  display: block;
+}
+
+.horario p {
+  margin: 4px 0;
+  font-size: 0.95em;
+  color: #1e4f3a;
+}
+
+/* =======================
+   BOTONES DE IDIOMA
+======================= */
+
+.lang {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px auto 30px;
+}
+
+.lang button {
+  background-color: #f3e6b5;
+  color: #1e4f3a;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.95em;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+  transition: all 0.25s ease;
+}
+
+.lang button:hover {
+  background-color: #1f5b3b;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.lang button:active {
+  transform: scale(0.95);
 }
 
 /* =======================
@@ -85,7 +129,6 @@ h2 {
   flex-direction: column;
 }
 
-/* Nombre + precio */
 .item > span {
   font-weight: 700;
   font-size: 1.15em;
@@ -100,7 +143,6 @@ h2 {
   color: #f4e9d8;
 }
 
-/* Descripción */
 .item small {
   margin-top: 6px;
   font-size: 0.9em;
@@ -108,22 +150,83 @@ h2 {
 }
 
 /* =======================
-   HORARIOS / DIRECCIÓN
+   GALERÍAS
 ======================= */
 
-.horario {
-  margin-top: 20px;
-  padding: 16px 20px;
-  background-color: #f3e6b5;
-  border-radius: 14px;
-  display: inline-block;
+.gallery {
+  display: flex;
+  gap: 12px;
+  margin: 16px auto 0;
+  max-width: 560px;
 }
 
-.horario p {
-  margin: 4px 0;
-  font-size: 0.95em;
-  color: #1e4f3a;
+.gallery img {
+  width: 33.33%;
+  height: 140px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
+
+.gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* =======================
+   LIGHTBOX
+======================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.lightbox .nav {
+  position: absolute;
+  top: 50%;
+  font-size: 60px;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox .prev {
+  left: 30px;
+}
+
+.lightbox .next {
+  right: 30px;
+}
+
+/* =======================
+   FOOTER
+======================= */
 
 .address {
   margin-top: 20px;
@@ -131,10 +234,6 @@ h2 {
   color: #ffffff;
   opacity: 0.9;
 }
-
-/* =======================
-   BOTONES
-======================= */
 
 .btn {
   display: inline-flex;
@@ -162,31 +261,6 @@ h2 {
 }
 
 /* =======================
-   GALERÍA DE IMÁGENES
-======================= */
-
-.gallery {
-  display: flex;
-  gap: 12px;
-  margin: 16px auto 0;
-  max-width: 560px;
-}
-
-.gallery img {
-  width: 33.33%;
-  height: 140px;              /* MÁS ALTAS */
-  object-fit: cover;
-  object-position: center;    /* foco al centro */
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.03);
-}
-
-/* =======================
    MOBILE
 ======================= */
 
@@ -199,178 +273,16 @@ h2 {
     font-size: 1.9em;
   }
 
-  .gallery {
-    gap: 8px;
-  }
-
   .gallery img {
-    width: 33.33%;
     height: 80px;
-    max-height: 80px;
   }
-}
 
-/* ===== LIGHTBOX ===== */
-.lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  z-index: 9999;
-  align-items: center;
-  justify-content: center;
-}
-
-.lightbox.active {
-  display: flex;
-}
-
-.lightbox-img {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 12px;
-}
-
-.lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
-  color: #fff;
-  cursor: pointer;
-}
-
-.lightbox .nav {
-  position: absolute;
-  top: 50%;
-  font-size: 60px;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-
-.lightbox .prev {
-  left: 30px;
-}
-
-.lightbox .next {
-  right: 30px;
-}
-/* ===== LIGHTBOX ===== */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 85%;
-  border-radius: 12px;
-}
-
-.lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 36px;
-  color: #fff;
-  cursor: pointer;
-}
-
-/* =======================
-   BOTONES DE IDIOMA
-======================= */
-
-.lang {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 20px auto 10px;
-}
-
-.lang button {
-  background-color: #1f5b3b;
-  color: #ffffff;
-  border: none;
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-size: 0.85em;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;              /* 🔥 espacio bandera / texto */
-  transition: all 0.2s ease;
-}
-
-.lang button:hover {
-  background-color: #2f7a55;
-  transform: translateY(-1px);
-}
-
-/* 📱 Mobile */
-@media (max-width: 768px) {
-  .lang button {
-    font-size: 0.8em;
-    padding: 6px 12px;
-}
-   
-/* =======================
-   BOTONES DE IDIOMA
-======================= */
-
-.lang {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 20px 0 30px;
-}
-
-.lang button {
-  background-color: #f3e6b5; /* mostaza claro */
-  color: #1e4f3a;            /* verde Patagonia */
-  border: none;
-  padding: 10px 18px;
-  font-size: 0.95em;
-  font-weight: 700;
-  border-radius: 999px;      /* 🔥 redondos */
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
-  transition: all 0.25s ease;
-}
-
-/* Hover (solo PC) */
-.lang button:hover {
-  background-color: #1f5b3b;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* Click */
-.lang button:active {
-  transform: scale(0.95);
-}
-
-/* 📱 Mobile (mismo estilo, un poco más chico) */
-@media (max-width: 600px) {
   .lang button {
     padding: 8px 14px;
     font-size: 0.9em;
   }
 
-header .horario {
-  display: block;
-  margin: 20px auto 0;
+  .lightbox .nav {
+    font-size: 40px;
+  }
 }
-
-
-
-
-
-
-
