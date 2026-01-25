@@ -470,6 +470,17 @@ footer.social .btn.google:hover {
 
 }
 
+/* =======================
+   CONTADOR DE VISITAS
+======================= */
+.visits {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #ffffff;
+  opacity: 0.85;
+}
+
 
 
 
