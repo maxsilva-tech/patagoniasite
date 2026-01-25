@@ -339,7 +339,12 @@ h2 {
     padding: 8px 14px;
     font-size: 0.9em;
   }
+
+header .horario {
+  display: block;
+  margin: 20px auto 0;
 }
+
 
 
 
