@@ -29,14 +29,6 @@ header {
   max-width: 420px;      /* 🔥 evita que se estire en PC */
   width: 100%;
 }
-/* 📱 FIX CENTRADO HORARIO EN MOBILE */
-@media (max-width: 600px) {
-  .horario {
-    width: calc(100% - 32px);  /* evita que se “corra” */
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 .lang {
   display: flex;
@@ -459,7 +451,7 @@ footer.social .btn.google:hover {
 
 }
 /* =======================
-   FIX HORARIO MOBILE
+   FIX HORARIO MOBILE – FINAL
 ======================= */
 @media (max-width: 600px) {
 
@@ -469,10 +461,9 @@ footer.social .btn.google:hover {
   }
 
   .horario {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 360px;   /* 🔥 clave: evita que se desplace */
+    width: calc(100% - 32px); /* 🔥 centra de verdad */
+    max-width: 360px;
+    margin: 20px auto 0;
   }
 
 }
@@ -487,6 +478,7 @@ footer.social .btn.google:hover {
   color: #ffffff;
   opacity: 0.85;
 }
+
 
 
 
