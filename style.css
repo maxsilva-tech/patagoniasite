@@ -29,17 +29,14 @@ header {
   max-width: 420px;      /* 🔥 evita que se estire en PC */
   width: 100%;
 }
-/* =======================
-   FIX HORARIO EN MOBILE
-======================= */
+/* 📱 FIX CENTRADO HORARIO EN MOBILE */
 @media (max-width: 600px) {
   .horario {
-    width: calc(100% - 40px); /* 🔥 evita corrimiento */
+    width: calc(100% - 32px);  /* evita que se “corra” */
     margin-left: auto;
     margin-right: auto;
   }
 }
-
 
 .lang {
   display: flex;
@@ -490,6 +487,7 @@ footer.social .btn.google:hover {
   color: #ffffff;
   opacity: 0.85;
 }
+
 
 
 
