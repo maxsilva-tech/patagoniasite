@@ -105,3 +105,23 @@ document.addEventListener('keydown', (e) => {
   }
 })();
 
+
+// 🔍 Toggle buscador
+const searchToggle = document.getElementById("search-toggle");
+const searchInput = document.getElementById("search-input");
+
+searchToggle.addEventListener("click", () => {
+  searchInput.classList.toggle("active");
+  searchInput.focus();
+});
+
+// 🔎 Filtro de productos
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
+  const items = document.querySelectorAll(".item");
+
+  items.forEach(item => {
+    const text = item.innerText.toLowerCase();
+    item.style.display = text.includes(query) ? "block" : "none";
+  });
+});
