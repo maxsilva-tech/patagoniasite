@@ -5,15 +5,17 @@ body {
   color: #4a3b2a;
 }
 
+/* =======================
+   HEADER
+======================= */
+
 header {
   display: flex;
   flex-direction: column;
-  align-items: center;   /* 🔥 centra todo horizontalmente */
-  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 60px 20px 50px;
 }
-
 
 .logo {
   max-width: 420px;
@@ -21,14 +23,16 @@ header {
 }
 
 .horario {
-  margin: 20px auto 0;   /* 🔥 auto = centro perfecto */
+  margin: 20px auto 0;
   padding: 16px 20px;
   background-color: #f3e6b5;
   border-radius: 14px;
-  text-align: center;
-  max-width: 420px;      /* 🔥 evita que se estire en PC */
-  width: 100%;
+  max-width: 420px;
 }
+
+/* =======================
+   IDIOMAS
+======================= */
 
 .lang {
   display: flex;
@@ -44,6 +48,10 @@ header {
   font-weight: bold;
   cursor: pointer;
 }
+
+/* =======================
+   MAIN / ITEMS
+======================= */
 
 main {
   max-width: 900px;
@@ -64,10 +72,29 @@ h2 {
   padding: 16px;
   border-radius: 12px;
   display: flex;
-  flex-direction: column;   /* orden vertical */
-  gap: 6px;                 /* aire entre líneas */
+  flex-direction: column;
+  gap: 6px;
   margin-bottom: 12px;
 }
+
+.item span {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.item small {
+  font-size: 0.9em;
+  color: #f1e6d2;
+}
+
+.item strong {
+  font-size: 1.05em;
+  color: #f4e9d8;
+}
+
+/* =======================
+   GALERÍA
+======================= */
 
 .gallery {
   display: flex;
@@ -84,7 +111,10 @@ h2 {
   cursor: pointer;
 }
 
-/* LIGHTBOX */
+/* =======================
+   LIGHTBOX
+======================= */
+
 .lightbox {
   position: fixed;
   inset: 0;
@@ -116,447 +146,8 @@ h2 {
 .lightbox .prev { left: 20px; }
 .lightbox .next { right: 20px; }
 
-.delivery-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 30px;
-}
-
-.delivery-links img {
-  height: 48px;
-}
-
 /* =======================
-   LIGHTBOX – AJUSTE MOBILE FINAL
-======================= */
-@media (max-width: 600px) {
-
-  .lightbox .prev,
-  .lightbox .next {
-    font-size: 26px;          /* 🔥 más chicas */
-    padding: 6px 8px;
-    background: rgba(0,0,0,0.4);
-    border-radius: 10px;
-  }
-
-  .lightbox .prev {
-    left: 8px;                /* 🔥 bien pegada al borde */
-  }
-
-  .lightbox .next {
-    right: 8px;               /* 🔥 bien pegada al borde */
-  }
-
-  .lightbox-img {
-    max-width: 94vw;          /* 🔥 deja aire a los costados */
-    max-height: 65vh;
-  }
-}
-
-/* =======================
-   FIX BOTONES WHATSAPP / INSTAGRAM
-======================= */
-
-footer.social {
-  display: block;
-  text-align: center;
-  padding: 30px 20px 40px;
-  position: relative;
-  z-index: 10;
-}
-
-footer.social .btn {
-  display: inline-flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  margin: 10px;
-}
-
-/* Evita que algún contenedor los tape */
-body,
-main {
-  overflow-x: visible;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  footer.social {
-    padding-bottom: 50px;
-  }
-}
-
-/* =======================
-   FOOTER / SOCIAL – FIX TOTAL
-======================= */
-
-footer.social {
-  background: transparent;
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 40px;
-  position: relative;
-  z-index: 20;
-}
-
-footer.social p {
-  color: #ffffff;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.social-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-
-footer.social .btn {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  min-width: 160px;
-  padding: 14px 20px;
-  border-radius: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* DELIVERY LOGOS */
-footer .delivery-links {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin: 16px 0 24px;
-}
-
-footer .delivery-links img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  footer.social {
-    padding-bottom: 60px;
-  }
-
-  footer .delivery-links img {
-    height: 42px;
-  }
-}
-
-/* =======================
-   BOTONES SOCIALES – ESTILO FOFO
-======================= */
-
-footer.social .btn {
-  border-radius: 999px;
-  padding: 14px 22px;
-  font-size: 1em;
-  font-weight: 700;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* WhatsApp */
-footer.social .btn.whatsapp {
-  background-color: #25D366;
-  color: #ffffff;
-  border: none;
-}
-
-footer.social .btn.whatsapp:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 22px rgba(37,211,102,0.45);
-}
-
-/* Instagram */
-footer.social .btn.instagram {
-  background: linear-gradient(
-    45deg,
-    #feda75,
-    #fa7e1e,
-    #d62976,
-    #962fbf,
-    #4f5bd5
-  );
-  color: #ffffff;
-  border: none;
-}
-
-footer.social .btn.instagram:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 22px rgba(214,41,118,0.45);
-}
-
-/* Google */
-footer.social .btn.google {
-  background-color: #ffffff;
-  color: #1e4f3a;
-  border: 2px solid #fbbc04;
-}
-
-footer.social .btn.google:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 22px rgba(251,188,4,0.45);
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  footer.social .btn {
-    padding: 12px 20px;
-    font-size: 0.95em;
-  }
-}
-
-/* =======================
-   MEJOR LECTURA EN MOBILE
-======================= */
-
-@media (max-width: 600px) {
-
-  /* =======================
-   ITEMS – ORDEN FINAL
-======================= */
-
-.item span {
-  font-weight: 700;
-  font-size: 1.1em;
-  color: #ffffff;
-}
-
-.item small {
-  font-size: 0.9em;
-  color: #f1e6d2;
-  line-height: 1.45;
-}
-
-.item strong {
-  font-size: 1.05em;
-  color: #f4e9d8;
-}
-
-  .item {
-    padding: 16px 18px;         /* más aire general */
-  }
-}
-
-.team {
-  margin: 35px auto 15px;
-  text-align: center;
-}
-
-.team img {
-  max-width: 620px;     /* 🔥 tamaño controlado en PC */
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
-}
-
-.team-text {
-  margin-top: 14px;
-  font-size: 1em;
-  color: #ffffff;
-  opacity: 0.9;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* 📱 Mobile */
-@media (max-width: 600px) {
-  .team img {
-    max-width: 90%;
-  }
-
-  .team-text {
-    font-size: 0.95em;
-    padding: 0 10px;
-  }
-}
-
-/* =======================
-   ITEMS – ORDEN VERTICAL
-======================= */
-
-.item span {
-  font-weight: 700;
-  font-size: 1.1em;
-  color: #ffffff;
-  margin-bottom: 4px;
-}
-
-.item small {
-  font-size: 0.9em;
-  color: #f1e6d2;
-  margin-bottom: 6px;
-  line-height: 1.4;
-}
-
-.item strong {
-  font-size: 1.05em;
-  color: #f4e9d8;
-  align-self: flex-start;
-}
-
-/* 📱 Mobile – más aire */
-@media (max-width: 600px) {
-  .item {
-    padding: 16px 16px;
-  }
-
-  .item span {
-    font-size: 1.05em;
-  }
-
-  .item small {
-    font-size: 0.88em;
-  }
-
-  .item strong {
-    margin-top: 2px;
-  }
-}
-/* =======================
-   MOBILE – ORDEN DEL ITEM
-======================= */
-@media (max-width: 600px) {
-
-  .item {
-    padding: 16px 18px;
-  }
-
-  .item span {
-    display: block;
-    font-size: 1.05em;
-    margin-bottom: 6px;
-  }
-
-  .item small {
-    display: block;
-    margin-bottom: 8px;
-    line-height: 1.45;
-  }
-
-  .item strong {
-    display: block;
-    font-size: 1em;
-  }
-
-}
-/* =======================
-   FIX HORARIO MOBILE – FINAL
-======================= */
-@media (max-width: 600px) {
-
-  header {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .horario {
-    width: calc(100% - 32px); /* 🔥 centra de verdad */
-    max-width: 360px;
-    margin: 20px auto 0;
-  }
-
-}
-
-/* =========================
-   LIGHTBOX + GALERÍAS
-========================= */
-
-const galleryImages = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.lightbox .close');
-const prevBtn = document.querySelector('.lightbox .prev');
-const nextBtn = document.querySelector('.lightbox .next');
-
-let currentIndex = 0;
-let currentGallery = [];
-
-/* Abrir lightbox */
-galleryImages.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    currentGallery = Array.from(img.parentElement.querySelectorAll('img'));
-    currentIndex = currentGallery.indexOf(img);
-    openLightbox();
-  });
-});
-
-function openLightbox() {
-  lightboxImg.src = currentGallery[currentIndex].src;
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-/* Cerrar lightbox */
-function closeLightbox() {
-  lightbox.classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-closeBtn.addEventListener('click', closeLightbox);
-
-lightbox.addEventListener('click', (e) => {
-  if (e.target === lightbox) {
-    closeLightbox();
-  }
-});
-
-/* Navegación */
-prevBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  currentIndex =
-    (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-  lightboxImg.src = currentGallery[currentIndex].src;
-});
-
-nextBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  currentIndex =
-    (currentIndex + 1) % currentGallery.length;
-  lightboxImg.src = currentGallery[currentIndex].src;
-});
-
-/* Teclado (PC) */
-document.addEventListener('keydown', (e) => {
-  if (!lightbox.classList.contains('active')) return;
-
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') prevBtn.click();
-  if (e.key === 'ArrowRight') nextBtn.click();
-});
-
-// =======================
-// CONTADOR DE VISITAS
-// =======================
-(function () {
-  let visits = localStorage.getItem("patagonia_visits");
-
-  if (!visits) {
-    visits = 1;
-  } else {
-    visits = parseInt(visits, 10) + 1;
-  }
-
-  localStorage.setItem("patagonia_visits", visits);
-
-  const counter = document.getElementById("visit-count");
-  if (counter) {
-    counter.textContent = visits;
-  }
-})();
-
-  /* =======================
-   BUSCADOR – ESTILO FINAL
+   BUSCADOR
 ======================= */
 
 .search-wrapper {
@@ -586,97 +177,163 @@ document.addEventListener('keydown', (e) => {
   color: #1f5b3b;
 }
 
-#search-input::placeholder {
-  color: #6b6b6b;
-  font-weight: 500;
+/* =======================
+   FOOTER
+======================= */
+
+footer.social {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* Hover / focus */
-.search-wrapper:focus-within {
-  box-shadow: 0 8px 20px rgba(31,91,59,0.45);
-  transform: translateY(-1px);
-  transition: all 0.25s ease;
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .search-wrapper {
-    max-width: 300px;
-  }
+footer.social .btn {
+  border-radius: 999px;
+  padding: 14px 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+footer.social .btn.whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+footer.social .btn.instagram {
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+  color: #fff;
+}
+
+footer.social .btn.google {
+  background: #fff;
+  color: #1e4f3a;
+  border: 2px solid #fbbc04;
 }
 
 /* =======================
-   CONTADOR DE VISITAS
+   MOBILE
 ======================= */
-.visits {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 0.9em;
-  color: #ffffff;
-  opacity: 0.85;
+
+@media (max-width: 600px) {
+  .search-wrapper { max-width: 300px; }
+  .gallery img { height: 100px; }
 }
+
+/* =========================
+   MULTIIDIOMA
+========================= */
+
+function setLang(lang) {
+  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setLang('pt');
+});
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+const galleryImages = document.querySelectorAll('.gallery img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.querySelector('.lightbox .close');
+const prevBtn = document.querySelector('.lightbox .prev');
+const nextBtn = document.querySelector('.lightbox .next');
+
+let currentIndex = 0;
+let currentGallery = [];
+
+galleryImages.forEach(img => {
+  img.addEventListener('click', () => {
+    currentGallery = Array.from(img.parentElement.querySelectorAll('img'));
+    currentIndex = currentGallery.indexOf(img);
+    openLightbox();
+  });
+});
+
+function openLightbox() {
+  lightboxImg.src = currentGallery[currentIndex].src;
+  lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+}
+
+closeBtn.onclick = closeLightbox;
+lightbox.onclick = e => e.target === lightbox && closeLightbox();
+
+prevBtn.onclick = e => {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+  lightboxImg.src = currentGallery[currentIndex].src;
+};
+
+nextBtn.onclick = e => {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % currentGallery.length;
+  lightboxImg.src = currentGallery[currentIndex].src;
+};
+
+/* =========================
+   BUSCADOR (TÍTULOS + ITEMS)
+========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
   const sections = document.querySelectorAll("main section");
 
   searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase().trim();
-
-    // Si está vacío → mostrar todo
-    if (query === "") {
-      sections.forEach(section => {
-        section.style.display = "block";
-        section.querySelectorAll(".item").forEach(item => {
-          item.style.display = "flex";
-        });
-      });
-      return;
-    }
+    const q = searchInput.value.toLowerCase().trim();
 
     sections.forEach(section => {
-      const title = section.querySelector("h2")?.innerText.toLowerCase() || "";
+      const title = section.querySelector("h2").innerText.toLowerCase();
       const items = section.querySelectorAll(".item");
 
-      // 👉 SI coincide el título (ej: "sobremesas")
-      if (title.includes(query)) {
+      if (!q) {
         section.style.display = "block";
-        items.forEach(item => item.style.display = "flex");
+        items.forEach(i => i.style.display = "flex");
         return;
       }
 
-      // 👉 Si no coincide el título, filtrar item por item
-      let anyVisible = false;
+      if (title.includes(q)) {
+        section.style.display = "block";
+        items.forEach(i => i.style.display = "flex");
+        return;
+      }
 
-      items.forEach(item => {
-        const text = item.innerText.toLowerCase();
-        if (text.includes(query)) {
-          item.style.display = "flex";
-          anyVisible = true;
-        } else {
-          item.style.display = "none";
-        }
+      let any = false;
+      items.forEach(i => {
+        const match = i.innerText.toLowerCase().includes(q);
+        i.style.display = match ? "flex" : "none";
+        if (match) any = true;
       });
 
-      section.style.display = anyVisible ? "block" : "none";
+      section.style.display = any ? "block" : "none";
     });
   });
 });
 
+/* =========================
+   CONTADOR DE VISITAS
+========================= */
 
+(function () {
+  let visits = localStorage.getItem("patagonia_visits") || 0;
+  visits++;
+  localStorage.setItem("patagonia_visits", visits);
+  const el = document.getElementById("visit-count");
+  if (el) el.textContent = visits;
+})();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
