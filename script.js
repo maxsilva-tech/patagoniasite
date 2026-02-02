@@ -125,3 +125,25 @@ searchInput.addEventListener("input", () => {
     item.style.display = text.includes(query) ? "block" : "none";
   });
 });
+
+/* =========================
+   BUSCADOR DE INGREDIENTES
+========================= */
+
+const searchInput = document.getElementById('search-input');
+const menuItems = document.querySelectorAll('.item');
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase().trim();
+
+  menuItems.forEach(item => {
+    const text = item.innerText.toLowerCase();
+
+    if (text.includes(query)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
+
