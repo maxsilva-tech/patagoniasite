@@ -87,6 +87,59 @@ document.addEventListener('keydown', (e) => {
 });
 
 // =======================
+// BUSCADOR (TÍTULOS + ITEMS)
+// =======================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+  const sections = document.querySelectorAll("main section");
+
+  if (!searchInput) return;
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase().trim();
+
+    // Si está vacío → mostrar todo
+    if (query === "") {
+      sections.forEach(section => {
+        section.style.display = "block";
+        section.querySelectorAll(".item").forEach(item => {
+          item.style.display = "flex";
+        });
+      });
+      return;
+    }
+
+    sections.forEach(section => {
+      const title = section.querySelector("h2")?.innerText.toLowerCase() || "";
+      const items = section.querySelectorAll(".item");
+
+      // 👉 Si coincide el título (ej: "sobremesas")
+      if (title.includes(query)) {
+        section.style.display = "block";
+        items.forEach(item => item.style.display = "flex");
+        return;
+      }
+
+      // 👉 Si no, filtrar item por item
+      let anyVisible = false;
+
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(query)) {
+          item.style.display = "flex";
+          anyVisible = true;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      section.style.display = anyVisible ? "block" : "none";
+    });
+  });
+});
+
+// =======================
 // CONTADOR DE VISITAS
 // =======================
 (function () {
@@ -106,55 +159,9 @@ document.addEventListener('keydown', (e) => {
   }
 })();
 
-  /* =======================
-   BUSCADOR – ESTILO FINAL
-======================= */
-
-.search-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  max-width: 360px;
-  margin: 20px auto 30px;
-  padding: 10px 16px;
-  background: #f3e6b5;
-  border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+ 
 }
 
-.search-icon {
-  font-size: 20px;
-  color: #1f5b3b;
-}
-
-#search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-size: 0.95em;
-  font-weight: 600;
-  color: #1f5b3b;
-}
-
-#search-input::placeholder {
-  color: #6b6b6b;
-  font-weight: 500;
-}
-
-/* Hover / focus */
-.search-wrapper:focus-within {
-  box-shadow: 0 8px 20px rgba(31,91,59,0.45);
-  transform: translateY(-1px);
-  transition: all 0.25s ease;
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .search-wrapper {
-    max-width: 300px;
-  }
-}
 
 
 
