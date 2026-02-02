@@ -106,37 +106,5 @@ document.addEventListener('keydown', (e) => {
 })();
 
 
-/* =========================
-   BUSCADOR DE INGREDIENTES
-========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("search-input");
-  const items = document.querySelectorAll(".item");
-  const sections = document.querySelectorAll("main section");
 
-  searchInput.addEventListener("input", () => {
-    const query = searchInput.value.toLowerCase().trim();
-
-    if (query === "") {
-      // Mostrar todo de nuevo
-      items.forEach(item => item.style.display = "flex");
-      sections.forEach(section => section.style.display = "block");
-      return;
-    }
-
-    // Ocultar todo
-    sections.forEach(section => section.style.display = "none");
-
-    // Mostrar solo los items que coinciden
-    items.forEach(item => {
-      const text = item.innerText.toLowerCase();
-      if (text.includes(query)) {
-        item.style.display = "flex";
-        item.closest("section").style.display = "block";
-      } else {
-        item.style.display = "none";
-      }
-    });
-  });
-});
