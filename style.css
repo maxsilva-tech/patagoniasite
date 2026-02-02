@@ -1,3 +1,7 @@
+/* =======================
+   BASE
+======================= */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -50,7 +54,7 @@ header {
 }
 
 /* =======================
-   MAIN / ITEMS
+   MAIN / SEÇÕES
 ======================= */
 
 main {
@@ -59,16 +63,27 @@ main {
   padding: 20px;
 }
 
+h1 {
+  text-align: center;
+  color: #1f5b3b;
+  margin-bottom: 30px;
+}
+
 h2 {
   background: #1f5b3b;
-  color: white;
-  padding: 10px;
+  color: #ffffff;
+  padding: 10px 14px;
   border-radius: 10px;
+  margin-top: 40px;
 }
+
+/* =======================
+   ITEMS
+======================= */
 
 .item {
   background: #2f7a55;
-  color: white;
+  color: #ffffff;
   padding: 16px;
   border-radius: 12px;
   display: flex;
@@ -85,21 +100,23 @@ h2 {
 .item small {
   font-size: 0.9em;
   color: #f1e6d2;
+  line-height: 1.45;
 }
 
 .item strong {
   font-size: 1.05em;
   color: #f4e9d8;
+  align-self: flex-start;
 }
 
 /* =======================
-   GALERÍA
+   GALERIAS
 ======================= */
 
 .gallery {
   display: flex;
   gap: 10px;
-  margin: 16px auto;
+  margin: 16px auto 30px;
   max-width: 560px;
 }
 
@@ -118,10 +135,11 @@ h2 {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   display: none;
   align-items: center;
   justify-content: center;
+  z-index: 999;
 }
 
 .lightbox.active {
@@ -137,14 +155,25 @@ h2 {
 .lightbox .prev,
 .lightbox .next {
   position: absolute;
-  color: white;
+  color: #ffffff;
   font-size: 36px;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
-.lightbox .close { top: 20px; right: 30px; }
-.lightbox .prev { left: 20px; }
-.lightbox .next { right: 20px; }
+.lightbox .close {
+  top: 20px;
+  right: 30px;
+}
+
+.lightbox .prev {
+  left: 20px;
+}
+
+.lightbox .next {
+  right: 20px;
+}
 
 /* =======================
    BUSCADOR
@@ -159,7 +188,7 @@ h2 {
   padding: 10px 16px;
   background: #f3e6b5;
   border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
 .search-icon {
@@ -177,8 +206,30 @@ h2 {
   color: #1f5b3b;
 }
 
+#search-input::placeholder {
+  color: #6b6b6b;
+  font-weight: 500;
+}
+
 /* =======================
-   FOOTER
+   MAPA
+======================= */
+
+.mapa {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.mapa a {
+  color: #1f5b3b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* =======================
+   FOOTER / SOCIAL
 ======================= */
 
 footer.social {
@@ -191,6 +242,7 @@ footer.social {
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 footer.social .btn {
@@ -198,22 +250,91 @@ footer.social .btn {
   padding: 14px 22px;
   font-weight: 700;
   text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+footer.social .btn:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* WhatsApp */
 footer.social .btn.whatsapp {
   background: #25D366;
-  color: #fff;
+  color: #ffffff;
 }
 
+/* Instagram */
 footer.social .btn.instagram {
-  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-  color: #fff;
+  background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+  color: #ffffff;
 }
 
+/* Google */
 footer.social .btn.google {
-  background: #fff;
+  background: #ffffff;
   color: #1e4f3a;
   border: 2px solid #fbbc04;
+}
+
+/* =======================
+   DELIVERY
+======================= */
+
+.delivery-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.delivery-links img {
+  height: 48px;
+  width: auto;
+}
+
+/* =======================
+   EQUIPE
+======================= */
+
+.team {
+  margin: 35px auto 15px;
+  text-align: center;
+}
+
+.team img {
+  max-width: 620px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.25);
+}
+
+.team-text {
+  margin-top: 14px;
+  font-size: 1em;
+  color: #ffffff;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =======================
+   CONTADOR
+======================= */
+
+.visits {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: #ffffff;
+  opacity: 0.85;
 }
 
 /* =======================
@@ -221,121 +342,34 @@ footer.social .btn.google {
 ======================= */
 
 @media (max-width: 600px) {
-  .search-wrapper { max-width: 300px; }
-  .gallery img { height: 100px; }
+
+  .search-wrapper {
+    max-width: 300px;
+  }
+
+  .gallery img {
+    height: 100px;
+  }
+
+  .lightbox .prev,
+  .lightbox .next {
+    font-size: 26px;
+    padding: 6px 8px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+  }
+
+  .lightbox img {
+    max-width: 94vw;
+    max-height: 65vh;
+  }
+
+  .team img {
+    max-width: 90%;
+  }
+
+  .team-text {
+    font-size: 0.95em;
+    padding: 0 10px;
+  }
 }
-
-/* =========================
-   MULTIIDIOMA
-========================= */
-
-function setLang(lang) {
-  document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-    el.textContent = el.getAttribute('data-' + lang);
-  });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  setLang('pt');
-});
-
-/* =========================
-   LIGHTBOX
-========================= */
-
-const galleryImages = document.querySelectorAll('.gallery img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeBtn = document.querySelector('.lightbox .close');
-const prevBtn = document.querySelector('.lightbox .prev');
-const nextBtn = document.querySelector('.lightbox .next');
-
-let currentIndex = 0;
-let currentGallery = [];
-
-galleryImages.forEach(img => {
-  img.addEventListener('click', () => {
-    currentGallery = Array.from(img.parentElement.querySelectorAll('img'));
-    currentIndex = currentGallery.indexOf(img);
-    openLightbox();
-  });
-});
-
-function openLightbox() {
-  lightboxImg.src = currentGallery[currentIndex].src;
-  lightbox.classList.add('active');
-}
-
-function closeLightbox() {
-  lightbox.classList.remove('active');
-}
-
-closeBtn.onclick = closeLightbox;
-lightbox.onclick = e => e.target === lightbox && closeLightbox();
-
-prevBtn.onclick = e => {
-  e.stopPropagation();
-  currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
-  lightboxImg.src = currentGallery[currentIndex].src;
-};
-
-nextBtn.onclick = e => {
-  e.stopPropagation();
-  currentIndex = (currentIndex + 1) % currentGallery.length;
-  lightboxImg.src = currentGallery[currentIndex].src;
-};
-
-/* =========================
-   BUSCADOR (TÍTULOS + ITEMS)
-========================= */
-
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("search-input");
-  const sections = document.querySelectorAll("main section");
-
-  searchInput.addEventListener("input", () => {
-    const q = searchInput.value.toLowerCase().trim();
-
-    sections.forEach(section => {
-      const title = section.querySelector("h2").innerText.toLowerCase();
-      const items = section.querySelectorAll(".item");
-
-      if (!q) {
-        section.style.display = "block";
-        items.forEach(i => i.style.display = "flex");
-        return;
-      }
-
-      if (title.includes(q)) {
-        section.style.display = "block";
-        items.forEach(i => i.style.display = "flex");
-        return;
-      }
-
-      let any = false;
-      items.forEach(i => {
-        const match = i.innerText.toLowerCase().includes(q);
-        i.style.display = match ? "flex" : "none";
-        if (match) any = true;
-      });
-
-      section.style.display = any ? "block" : "none";
-    });
-  });
-});
-
-/* =========================
-   CONTADOR DE VISITAS
-========================= */
-
-(function () {
-  let visits = localStorage.getItem("patagonia_visits") || 0;
-  visits++;
-  localStorage.setItem("patagonia_visits", visits);
-  const el = document.getElementById("visit-count");
-  if (el) el.textContent = visits;
-})();
-
-
-    
-
