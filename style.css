@@ -479,6 +479,51 @@ footer.social .btn.google:hover {
   opacity: 0.85;
 }
 
+/* =======================
+   BUSCADOR CON LUPA
+======================= */
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto 10px;
+}
+
+#search-toggle {
+  background: #1f5b3b;
+  color: #ffffff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+#search-input {
+  display: none;
+  width: 220px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 0.95em;
+}
+
+#search-input.active {
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #search-input {
+    width: 180px;
+  }
+}
+
 
 
 
