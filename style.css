@@ -469,27 +469,6 @@ footer.social .btn.google:hover {
 }
 
 /* =========================
-   MULTIIDIOMA
-========================= */
-
-function setLang(lang) {
-  const elements = document.querySelectorAll('[data-' + lang + ']');
-
-  elements.forEach(el => {
-    const text = el.getAttribute('data-' + lang);
-    if (text) {
-      el.textContent = text;
-    }
-  });
-}
-
-/* Idioma por defecto */
-document.addEventListener('DOMContentLoaded', () => {
-  setLang('pt');
-});
-
-
-/* =========================
    LIGHTBOX + GALERÍAS
 ========================= */
 
@@ -683,6 +662,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 
 
 
