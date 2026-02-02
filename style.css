@@ -479,37 +479,54 @@ footer.social .btn.google:hover {
   opacity: 0.85;
 }
 
-/* =======================
-   BUSCADOR FIJO CON LUPA
-======================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search-input");
+  const sections = document.querySelectorAll("main section");
 
-.search-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 20px auto 14px;
-}
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase().trim();
 
-.search-icon {
-  font-size: 20px;
-}
+    // Si está vacío → mostrar todo
+    if (query === "") {
+      sections.forEach(section => {
+        section.style.display = "block";
+        section.querySelectorAll(".item").forEach(item => {
+          item.style.display = "flex";
+        });
+      });
+      return;
+    }
 
-#search-input {
-  width: 240px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: none;
-  outline: none;
-  font-size: 0.95em;
-}
+    sections.forEach(section => {
+      const title = section.querySelector("h2")?.innerText.toLowerCase() || "";
+      const items = section.querySelectorAll(".item");
 
-/* Mobile */
-@media (max-width: 600px) {
-  #search-input {
-    width: 190px;
-  }
-}
+      // 👉 SI coincide el título (ej: "sobremesas")
+      if (title.includes(query)) {
+        section.style.display = "block";
+        items.forEach(item => item.style.display = "flex");
+        return;
+      }
+
+      // 👉 Si no coincide el título, filtrar item por item
+      let anyVisible = false;
+
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(query)) {
+          item.style.display = "flex";
+          anyVisible = true;
+        } else {
+          item.style.display = "none";
+        }
+      });
+
+      section.style.display = anyVisible ? "block" : "none";
+    });
+  });
+});
+
+
 
 
 
