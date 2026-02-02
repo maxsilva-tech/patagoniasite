@@ -105,24 +105,6 @@ document.addEventListener('keydown', (e) => {
   }
 })();
 
-/* =========================
-   BUSCADOR DE INGREDIENTES
-========================= */
-const menuItems = document.querySelectorAll('.item');
-
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase().trim();
-
-  menuItems.forEach(item => {
-    const text = item.innerText.toLowerCase();
-
-    if (text.includes(query)) {
-      item.style.display = 'flex';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-});
 
 /* =========================
    BUSCADOR DE INGREDIENTES
@@ -130,16 +112,31 @@ searchInput.addEventListener('input', () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
-  const menuItems = document.querySelectorAll(".item");
-
-  if (!searchInput) return;
+  const items = document.querySelectorAll(".item");
+  const sections = document.querySelectorAll("main section");
 
   searchInput.addEventListener("input", () => {
     const query = searchInput.value.toLowerCase().trim();
 
-    menuItems.forEach(item => {
+    if (query === "") {
+      // Mostrar todo de nuevo
+      items.forEach(item => item.style.display = "flex");
+      sections.forEach(section => section.style.display = "block");
+      return;
+    }
+
+    // Ocultar todo
+    sections.forEach(section => section.style.display = "none");
+
+    // Mostrar solo los items que coinciden
+    items.forEach(item => {
       const text = item.innerText.toLowerCase();
-      item.style.display = text.includes(query) ? "flex" : "none";
+      if (text.includes(query)) {
+        item.style.display = "flex";
+        item.closest("section").style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
     });
   });
 });
